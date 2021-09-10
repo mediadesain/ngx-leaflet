@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +11,7 @@ import { MarkerService } from './geolocation.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    LeafletModule
+    AppRoutingModule
   ],
   providers: [MarkerService],
   bootstrap: [AppComponent]
