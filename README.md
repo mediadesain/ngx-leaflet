@@ -1,6 +1,6 @@
 # NgxLeaflet
 
-Try create marker pin location for some place & click to pin to get new Latitude and Longitude.
+Try create marker pin location for some place & click to pin to get new Latitude and Longitude. Still trying
 
 ## Start Demo
 - Run `npm i` to install node_modules packages.
