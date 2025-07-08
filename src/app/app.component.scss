@@ -1,12 +1,15 @@
-main {position: relative; height: 100vh; display: flex; flex-direction: column; justify-content: space-between;}
 
-.map-container {height: 100%;}
-
-.map-frame {
-  border: 1px solid #ccc;
-  height: 100%;
+main {
+    position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
+    .map-container {
+        height: 80%;
+        .map-frame {height: 100%;}
+        #map {height: 100%;}
+    }
+    .map-detail {
+        height: 20%;
+    }
 }
 
-#map {
-  height: 100%;
-}
+
+

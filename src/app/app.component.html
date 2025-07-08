@@ -2,12 +2,17 @@
   <div class="map-container">
     <div class="map-frame"><div id="map"></div></div>
   </div>
-  <div>
-    <b>New:</b> {{markerSrvc.selectNewmarker|json}}<br/>
+  <div class="map-detail">
     <ng-container *ngIf="markerSrvc.selected">
       <b>{{markerSrvc.selected.name}}</b><br/>
       <span>{{markerSrvc.selected.city}}</span><br/>
+      <span>+{{markerSrvc.selected.phoneNo}}</span><br/>
       {{markerSrvc.selected.coordinates.lat+','+markerSrvc.selected.coordinates.lng}}
     </ng-container>
+    <hr/>
+    <b>New Selected:</b> {{markerSrvc.selectNewmarker|json}}<br/>
+    <input placeholder="type name" [(ngModel)]="name"/>
+    <input placeholder="phone no" type="number" [(ngModel)]="phoneNo"/>
+    <button (click)="addnew()">Add New</button>
   </div>
 </main>

@@ -23,7 +23,7 @@ export class MarkerService {
     map:any;
     selected:any = null;
     newmarker:any = null;
-    selectNewmarker: {lat: number,lng: number};
+    selectNewmarker: {lat?: number,lng?: number} = {};
 
     constructor() {}
     
@@ -31,7 +31,7 @@ export class MarkerService {
       const tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 18,
         minZoom: 3,
-        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        // attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
       });
       this.map = L.map('map', {
         center: [ -6.9473949,107.6391986 ],
@@ -44,8 +44,7 @@ export class MarkerService {
     dropMarker(){
       this.map.on('click', (e:any) => {
         // console.log('Pin Point',e)
-        if (this.newmarker !== null)
-          this.map.removeLayer(this.newmarker)
+        if (this.newmarker !== null) this.map.removeLayer(this.newmarker)
         this.selectNewmarker ={"lat": e.latlng.lat,"lng": e.latlng.lng}
         this.newmarker = new L.Marker([e.latlng.lat,e.latlng.lng]).addTo(this.map)
       });
@@ -53,11 +52,11 @@ export class MarkerService {
 
     loadMarkers(map: L.Map, markers: any[]) {
       console.log(markers)
-        markers.forEach( element => {
-            const marker = L.marker([element.coordinates.lat, element.coordinates.lng]);
-            marker.addTo(map);
-            marker.on('click', () => this.selected = element )
-        });
+      markers.forEach( element => {
+          const marker = L.marker([element.coordinates.lat, element.coordinates.lng]);
+          marker.addTo(map);
+          marker.on('click', () => this.selected = element )
+      });
     }
 
   
