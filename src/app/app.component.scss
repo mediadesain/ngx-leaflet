@@ -1,14 +1,12 @@
 
 main {
-    position: relative; height: 100%; display: flex; flex-direction: column; justify-content: space-between;
+    position: relative; height: 100%; display: flex; flex-direction: row; justify-content: space-between;
     .map-container {
-        height: 80%;
-        .map-frame {height: 100%;}
-        #map {height: 100%;}
+        height: 100%; width: 75%;
+        .map-frame {height: 100%; }
+        #map {height: 100%; width: 100%;}
     }
-    .map-detail {
-        height: 20%;
-    }
+    .map-detail {height: calc(100% - 40px); width: calc(25% - 40px); padding: 20px;}
 }
 
 

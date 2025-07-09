@@ -2,10 +2,26 @@
 
 html, body {height: 100%; margin: 0; padding: 0;}
 
-// Dark mode
-.leaflet-layer,
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out,
-.leaflet-control-attribution {
-  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+
+/*-- Light Mode --*/
+:root {
+    body {
+      color: #fff;
+    }
+}
+
+/*-- Dark Mode --*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #fff;
+    background-color: #111;
+  }
+  // Dark mode
+  .leaflet-layer,
+  .leaflet-control-zoom-in,
+  .leaflet-control-zoom-out,
+  .leaflet-control-attribution {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+  }
+  .leaflet-popup-content-wrapper {border-radius: 5px;}
 }
